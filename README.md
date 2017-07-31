@@ -38,7 +38,6 @@ Vue 的组件作用域都是孤立的，不允许在子组件的模板内直接�
 </script>
 ```
 
-
 在 props 中添加了元素之后，就不需要在 data 中再添加变量了
 
 **父组件部分：**
@@ -50,22 +49,15 @@ Vue 的组件作用域都是孤立的，不允许在子组件的模板内直接�
  </div>
 </template>
 ```
-
 在调用组件的时候，使用 v-bind 将 logo 的值绑定为 App.vue 中定义的变量 logoMsg
 
-
 然后就能将App.vue中 logoMsg 的值传给 header.vue 了：
-
 
 **二、子组件向父组件传递数据**
 
  子组件主要通过事件传递数据给父组件
 
- 
-
 **子组件部分：**
-
- 
 
 这是 login.vue 的 HTML 部分，当
 ```
@@ -76,12 +68,10 @@ Vue 的组件作用域都是孤立的，不允许在子组件的模板内直接�
 首先声明一个了方法 setUser，用 change 事件来调用 setUser
 
 
-
 在 setUser 中，使用了 $emit 来遍历 transferUser 事件，并返回 this.username
 
 其中 transferUser 是一个自定义的事件，功能类似于一个中转，this.username 将通过这个事件传递给父组件 
 
- 
 
 **父组件部分：**
 
