@@ -59,11 +59,20 @@ Vue 的组件作用域都是孤立的，不允许在子组件的模板内直接�
 
 **子组件部分：**
 
-这是 login.vue 的 HTML 部分，当
+
 ```
-<input>
+<template>
+ <section>
+  <div class='login'>
+   <label>
+    <span>用户名</span>
+    <input v-model='username' @change='setUser'>
+   </label>
+  </div>
+ </section>
+</template>
 ```
-的值发生变化的时候，将 username 传递给 App.vue
+这是 login.vue 的 HTML 部分，当 input 的值发生变化的时候，将 username 传递给 App.vue
 
 首先声明一个了方法 setUser，用 change 事件来调用 setUser
 
